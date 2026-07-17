@@ -39,7 +39,7 @@ const hikeStartIcon = new L.Icon({
 
 const hikeEndIcon = new L.Icon({
   iconUrl: "img/pin-icon-end.png",
-  iconSize: [16, 24],
+  iconSize: [8, 12],
   iconAnchor: [8, 24],
   popupAnchor: [0, -22],
 });
