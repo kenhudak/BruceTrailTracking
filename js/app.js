@@ -29,6 +29,21 @@ const CONFIG = {
   zoom: 7,
 };
 
+/* ---------------- Define Start/Stop Icon Marker Size ---------------- */
+const hikeStartIcon = new L.Icon({
+  iconUrl: "img/pin-icon-start.png",
+  iconSize: [16, 24],
+  iconAnchor: [8, 24],      // bottom tip of the pin sits on the trackpoint
+  popupAnchor: [0, -22],    // popups open just above the pin
+});
+
+const hikeEndIcon = new L.Icon({
+  iconUrl: "img/pin-icon-end.png",
+  iconSize: [16, 24],
+  iconAnchor: [8, 24],
+  popupAnchor: [0, -22],
+});
+
 /* ---------------- Map + base layers ---------------- */
 
 const baseLayers = {
@@ -126,9 +141,9 @@ function loadTrack(filename) {
     async: true,
     polyline_options: CONFIG.trackStyle,
     marker_options: {
-      startIconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-start.png",
-      endIconUrl:   "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-end.png",
-      shadowUrl:    "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-shadow.png",
+      startIcon: hikeStartIcon,
+      endIcon: hikeEndIcon,
+      shadowUrl: null,
     },
 
   })

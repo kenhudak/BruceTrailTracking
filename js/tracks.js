@@ -20,6 +20,8 @@
 const TRACK_FILES = [
   "20260518_Hamilton_22928885421.gpx", // delete this line (and the file) once you add real hikes, end the list in a ,
   "20260519_Hamilton_22939818045.gpx",
+  "20251004_BurlingtonDay1_20590461353.gpx",
+  "20251005_BurlingtonDay2_20601435417.gpx",
   // "2026-07-19_cyprus-lake-to-crane-lake.gpx",
 ];
 
