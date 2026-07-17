@@ -18,7 +18,7 @@
    ================================================================ */
 
 const TRACK_FILES = [
-  "2026-07-12_sample-tobermory.gpx", // delete this line (and the file) once you add real hikes
+  "20260518_Hamilton_22928885421.gpx", // delete this line (and the file) once you add real hikes, end the list in a ,
   // "2026-07-19_cyprus-lake-to-crane-lake.gpx",
 ];
 
