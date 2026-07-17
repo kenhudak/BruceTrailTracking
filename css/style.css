@@ -1,0 +1,342 @@
+/* ---------------------------------------------------------------
+   Bruce Trail Progress — design tokens
+   Palette drawn from the Niagara Escarpment:
+   limestone, cedar, moss, and the white blaze that marks the way.
+---------------------------------------------------------------- */
+:root {
+  --limestone: #e9e4d6;      /* page background */
+  --limestone-deep: #ddd6c3; /* card wells */
+  --cedar: #23402d;          /* deep forest green — primary card */
+  --moss: #557a5b;           /* mid green */
+  --bark: #2a241c;           /* body text */
+  --blaze: #ffffff;          /* the white blaze */
+  --ember: #d95d2c;          /* completed-track orange */
+  --radius-lg: 26px;
+  --radius-sm: 14px;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--limestone);
+  color: var(--bark);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------------
+   Bento grid
+   Desktop:
+   ┌────────┬──────────────────────────┐
+   │ title  │                          │
+   ├────────┤          MAP             │
+   │ stats  │                          │
+   ├────────┤                          │
+   │ layers │                          │
+   ├────────┤                          │
+   │ hikes  │                          │
+   ├────────┴──────────────────────────┤
+   │ footer                            │
+   └───────────────────────────────────┘
+---------------------------------------------------------------- */
+.bento {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  grid-template-rows: auto auto auto 1fr auto;
+  grid-template-areas:
+    "title  map"
+    "stats  map"
+    "layers map"
+    "hikes  map"
+    "footer footer";
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  background: var(--blaze);
+  overflow: hidden;
+}
+
+.card-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--moss);
+  margin: 0 0 12px;
+}
+
+/* --- Title card ------------------------------------------------ */
+.card--title {
+  grid-area: title;
+  background: var(--cedar);
+  color: var(--limestone);
+  position: relative;
+  /* organic, anti-grid corner */
+  border-radius: var(--radius-lg) var(--radius-lg) 60px var(--radius-lg);
+}
+
+/* The signature: a white blaze, exactly as painted on trailside trees */
+.blaze {
+  width: 26px;
+  height: 58px;
+  background: var(--blaze);
+  border-radius: 5px;
+  margin-bottom: 16px;
+  transform: rotate(-2deg);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+
+.card--title h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.02;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 0;
+  color: #b8c7ae;
+  font-size: 0.95rem;
+}
+
+/* --- Map card -------------------------------------------------- */
+.card--map {
+  grid-area: map;
+  padding: 0;
+  min-height: 520px;
+  border-radius: var(--radius-lg);
+  /* soft fluid edge on one corner */
+  border-bottom-left-radius: 70px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  background: var(--limestone-deep);
+}
+
+/* --- Stats card ------------------------------------------------ */
+.card--stats { grid-area: stats; }
+
+.stat-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.stat { display: flex; flex-direction: column; }
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--cedar);
+  line-height: 1.1;
+}
+
+.stat-unit {
+  font-size: 0.78rem;
+  color: var(--moss);
+}
+
+.progress-track {
+  height: 14px;
+  border-radius: 999px;
+  background: var(--limestone-deep);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: var(--ember);
+  transition: width 900ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* --- Layers card ----------------------------------------------- */
+.card--layers { grid-area: layers; }
+
+.layer-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.layer-btn {
+  flex: 1;
+  padding: 10px 6px;
+  border: 2px solid var(--limestone-deep);
+  background: transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--bark);
+  cursor: pointer;
+  transition: background 150ms, border-color 150ms, color 150ms;
+}
+
+.layer-btn:hover { border-color: var(--moss); }
+
+.layer-btn.is-active {
+  background: var(--cedar);
+  border-color: var(--cedar);
+  color: var(--blaze);
+}
+
+.layer-btn:focus-visible,
+.locate-btn:focus-visible {
+  outline: 3px solid var(--ember);
+  outline-offset: 2px;
+}
+
+.locate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--ember);
+  color: var(--blaze);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.locate-btn:hover { background: #c14e22; }
+
+.locate-status {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  color: var(--moss);
+  min-height: 1em;
+}
+
+/* --- Hike log card --------------------------------------------- */
+.card--hikes {
+  grid-area: hikes;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.hike-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.hike-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--limestone-deep);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.hike-list li:hover .hike-name { color: var(--ember); }
+
+/* mini blaze as list marker */
+.hike-list li::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--ember);
+  transform: translateY(2px) rotate(-2deg);
+}
+
+.hike-date {
+  flex: none;
+  font-size: 0.78rem;
+  color: var(--moss);
+  font-variant-numeric: tabular-nums;
+}
+
+.hike-name { font-weight: 500; }
+
+.hike-km {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--moss);
+  font-variant-numeric: tabular-nums;
+}
+
+.hike-empty {
+  color: var(--moss);
+  cursor: default !important;
+}
+.hike-empty::before { display: none; }
+
+/* --- Footer ---------------------------------------------------- */
+.card--footer {
+  grid-area: footer;
+  background: transparent;
+  padding: 6px 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--moss);
+}
+
+/* --- Map internals --------------------------------------------- */
+.leaflet-container { font-family: var(--font-body); }
+
+.user-location-dot {
+  background: #2a6cd4;
+  border: 3px solid var(--blaze);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(42,108,212,0.35);
+}
+
+/* PolylineMeasure control: nudge below zoom control */
+#polyline-measure-control { border-radius: 6px; }
+
+/* --- Responsive: stack cleanly on mobile ----------------------- */
+@media (max-width: 860px) {
+  .bento {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "map"
+      "stats"
+      "layers"
+      "hikes"
+      "footer";
+  }
+  .card--map, #map { min-height: 64vh; }
+  .card--map { border-bottom-left-radius: var(--radius-lg); }
+  .hike-list { max-height: 300px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill { transition: none; }
+}
