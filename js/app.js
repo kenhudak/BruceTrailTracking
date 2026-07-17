@@ -21,7 +21,7 @@ const CONFIG = {
   trailLengthKm: 900,
 
   /* Line styles */
-  mainTrailStyle: { color: "#557a5b", weight: 3, opacity: 0.55, dashArray: "6 8" },
+  mainTrailStyle: { color: "#557a5b", weight: 3, opacity: 0.65, dashArray: "6 8" },
   trackStyle:     { color: "#d95d2c", weight: 4, opacity: 0.9 },
 
   /* Initial view: centred on the escarpment */
@@ -103,9 +103,9 @@ function loadMainTrail() {
     polyline_options: CONFIG.mainTrailStyle,
     // new (1.7.0 syntax — literal URLs to show the start/end pin markers)
     marker_options: {
-      startIconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-start.png",
-      endIconUrl:   "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-end.png",
-      shadowUrl:    "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-shadow.png",
+      startIconUrl: null,
+      endIconUrl:   null,
+      shadowUrl:    null,
     },
   })
     .on("loaded", (e) => {
@@ -125,7 +125,12 @@ function loadTrack(filename) {
   new L.GPX("tracks/" + filename, {
     async: true,
     polyline_options: CONFIG.trackStyle,
-    markers: { startIcon: null, endIcon: null, wptIcons: {} },
+    marker_options: {
+      startIconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-start.png",
+      endIconUrl:   "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-end.png",
+      shadowUrl:    "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-shadow.png",
+    },
+
   })
     .on("loaded", (e) => {
       const gpx = e.target;
