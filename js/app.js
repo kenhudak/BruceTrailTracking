@@ -101,12 +101,11 @@ function loadMainTrail() {
   new L.GPX(MAIN_TRAIL_FILE, {
     async: true,
     polyline_options: CONFIG.mainTrailStyle,
-    // new (1.7.0 syntax — null URLs suppress the start/end pin markers)
+    // new (1.7.0 syntax — literal URLs to show the start/end pin markers)
     marker_options: {
-      startIconUrl: null,
-      endIconUrl: null,
-      shadowUrl: null,
-      wptIconUrls: {},
+      startIconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-start.png",
+      endIconUrl:   "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-end.png",
+      shadowUrl:    "https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-shadow.png",
     },
   })
     .on("loaded", (e) => {
