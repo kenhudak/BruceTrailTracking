@@ -22,9 +22,12 @@ const TRACK_FILES = [
   "20260519_Hamilton_22939818045.gpx",
   "20251004_BurlingtonDay1_20590461353.gpx",
   "20251005_BurlingtonDay2_20601435417.gpx",
-  "20241024_BlueMnt.gpx",
+  "20241020_BlueMnt.gpx",
   "20241021_BlueMnt.gpx",
   "20241022_BlueMnt.gpx",
+  "20241022_2_BlueMnt.gpx",
+  "20241023_BlueMnt.gpx",
+  "20241024_BlueMnt.gpx",
   // "2026-07-19_cyprus-lake-to-crane-lake.gpx",
 ];
 
