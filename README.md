@@ -3,6 +3,8 @@
 A static site (GitHub Pages friendly) that displays your incremental end-to-end
 hike of the Bruce Trail on an OpenStreetMap base layer.
 
+Dell G3 Ken Personal - Documents - Bruce Trail
+
 ## Directory layout
 
 ```

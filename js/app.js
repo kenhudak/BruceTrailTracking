@@ -101,7 +101,13 @@ function loadMainTrail() {
   new L.GPX(MAIN_TRAIL_FILE, {
     async: true,
     polyline_options: CONFIG.mainTrailStyle,
-    markers: { startIcon: null, endIcon: null, wptIcons: {} },
+    // new (1.7.0 syntax — null URLs suppress the start/end pin markers)
+    marker_options: {
+      startIconUrl: null,
+      endIconUrl: null,
+      shadowUrl: null,
+      wptIconUrls: {},
+    },
   })
     .on("loaded", (e) => {
       const km = e.target.get_distance() / 1000;
