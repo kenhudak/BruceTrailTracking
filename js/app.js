@@ -33,7 +33,7 @@ const CONFIG = {
 const hikeStartIcon = new L.Icon({
   iconUrl: "img/pin-icon-start.png",
   iconSize: [8, 12],       // 16, 24 was the default.
-  iconAnchor: [8, 24],      // bottom tip of the pin sits on the trackpoint
+  iconAnchor: [4, 12],      // bottom tip of the pin sits on the trackpoint
   popupAnchor: [0, -22],    // popups open just above the pin
 });
 
