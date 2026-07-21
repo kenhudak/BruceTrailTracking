@@ -28,6 +28,8 @@ const TRACK_FILES = [
   "20241022_2_BlueMnt.gpx",
   "20241023_BlueMnt.gpx",
   "20241024_BlueMnt.gpx",
+  "20250519_Dufferin.gpx",
+  "FallingWatersManualFix.gpx",
   // "2026-07-19_cyprus-lake-to-crane-lake.gpx",
 ];
 
