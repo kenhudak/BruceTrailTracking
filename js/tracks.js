@@ -18,7 +18,7 @@
    ================================================================ */
 
 const TRACK_FILES = [
-  "20260518_Hamilton_22928885421.gpx", // delete this line (and the file) once you add real hikes, end the list in a ,
+  "20260518_Hamilton_22928885421.gpx", //add real hikes, end the list in a ,
   "20260519_Hamilton_22939818045.gpx",
   "20251004_BurlingtonDay1_20590461353.gpx",
   "20251005_BurlingtonDay2_20601435417.gpx",
@@ -31,6 +31,9 @@ const TRACK_FILES = [
   "20250519_Dufferin.gpx",
   "FallingWatersManualFix.gpx",
   "20250518_BlueMtnDevilsGlen.gpx",
+  "20260904NottawKeyhole_24263561140.gpx",
+  "20260905Dundasactivity_24253221060.gpx",
+  "20260906MonoCliffsactivity_24276123776.gpx"
   // "2026-07-19_cyprus-lake-to-crane-lake.gpx",
 ];
 
