@@ -128,6 +128,7 @@ function loadMainTrail() {
       if (km > 100) mainTrailKm = km; // trust the file if it looks like the full trail
       map.fitBounds(e.target.getBounds(), { padding: [30, 30] });
       updateStats();
+      addClubSections(map, e.target);
     })
     .on("error", () => {
       console.warn("Main trail GPX not found at " + MAIN_TRAIL_FILE);

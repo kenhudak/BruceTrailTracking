@@ -340,3 +340,26 @@ html, body {
 @media (prefers-reduced-motion: reduce) {
   .progress-fill { transition: none; }
 }
+
+/* --- Club section overlay ---------------------------------------- */
+.section-name span {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bark);
+  white-space: nowrap;
+  text-shadow: 0 0 4px var(--limestone), 0 0 4px var(--limestone);
+}
+
+.section-place span {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 11px;
+  color: #b8321f;
+  white-space: nowrap;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff;
+}
+
+.section-name, .section-place { pointer-events: none; }
