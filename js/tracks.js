@@ -33,7 +33,9 @@ const TRACK_FILES = [
   "20250518_BlueMtnDevilsGlen.gpx",
   "20260904NottawKeyhole_24263561140.gpx",
   "20260905Dundasactivity_24253221060.gpx",
-  "20260906MonoCliffsactivity_24276123776.gpx"
+  "20260906MonoCliffsactivity_24276123776.gpx",
+  "20261004Wiarton_24607601664.gpx",
+  "20261005BlueMountainSouth_24619370153.gpx"
   // "2026-07-19_cyprus-lake-to-crane-lake.gpx",
 ];
 
