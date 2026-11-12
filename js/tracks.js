@@ -35,7 +35,9 @@ const TRACK_FILES = [
   "20260905Dundasactivity_24253221060.gpx",
   "20260906MonoCliffsactivity_24276123776.gpx",
   "20261004Wiarton_24607601664.gpx",
-  "20261005BlueMountainSouth_24619370153.gpx"
+  "20261005BlueMountainSouth_24619370153.gpx",
+  "activity_Niagra_20261110_667_509.gpx",
+  "activity_Niagra_20261111_358_509.gpx"
   // "2026-07-19_cyprus-lake-to-crane-lake.gpx",
 ];
 
